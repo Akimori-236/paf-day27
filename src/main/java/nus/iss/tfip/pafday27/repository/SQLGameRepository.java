@@ -11,7 +11,7 @@ import nus.iss.tfip.pafday27.model.Comment;
 import nus.iss.tfip.pafday27.model.Game;
 
 @Repository
-public class GameRepository implements Queries {
+public class SQLGameRepository implements Queries {
 
     @Autowired
     private JdbcTemplate template;
@@ -31,5 +31,16 @@ public class GameRepository implements Queries {
         List<Comment> commentlist = template.query(SQLGetGameComments, BeanPropertyRowMapper.newInstance(Comment.class),
                 gid);
         return commentlist;
+    }
+
+    // SELECT AVG(rating) FROM comment WHERE gid=?;
+    public Double getAvgRating(Integer gid) {
+        Double avgRating = template.queryForObject(SQLAvgRating, Double.class, gid);
+        return avgRating;
+    }
+
+    // SELECT gid, name FROM game WHERE gid=?;
+    public Game getOneGame(Integer gid) {
+        return template.queryForObject(SQLGetOneGame, BeanPropertyRowMapper.newInstance(Game.class), gid);
     }
 }

@@ -6,6 +6,8 @@ import lombok.Data;
 public class Game {
     private Integer gid;
     private String name;
+    private String image;
+    private String url;
 
     public Game create() {
         return null;

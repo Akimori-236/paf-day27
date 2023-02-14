@@ -10,8 +10,8 @@ import com.mongodb.client.MongoClients;
 
 @Configuration
 public class MongoConfig {
-
-    public static final String DATABASE = "shows";
+    
+    public static final String DATABASE = "bgg";
 
     // get mongo URL from app.properties
     @Value("${mongo.url}")
