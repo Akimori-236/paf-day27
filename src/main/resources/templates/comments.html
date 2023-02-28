@@ -14,7 +14,8 @@
     </head>
     <body class="container">
         <a data-th-href="@{${game.url}}">
-            <h1 data-th-text="${game.name}"></h1>
+
+            <h1 data-th-text="${game.gid} + ' ' + ${game.name}"></h1>
             <img data-th-src="${game.image}" alt="" />
         </a>
 

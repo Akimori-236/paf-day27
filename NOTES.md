@@ -5,13 +5,11 @@ alway use batch insert instead of for loop single insert
 `.insertMany()` with `List<Documents`
 
 ```
-set MONGO_URL="mongodb+srv://nus-iss.lxwsyup.mongodb.net"
-set USERNAME=akimori
-set PASSWORD=230689
+set MONGO_URL='mongodb+srv://nus-iss.lxwsyup.mongodb.net'
+set USERNAME='akimori'
 
-mongoimport %MONGO_URL% --username %USERNAME% -d bgg -c game --jsonArray --file ./game.json --drop
+mongoimport --uri %MONGO_URL% --username=%USERNAME% -d bgg -c game --jsonArray --file ./game.json --drop
 ```
-
 
 mongo syntax
 
@@ -46,8 +44,6 @@ db.friends.updateOne({
     $pop: {hobbies: -1}  
 })
 ```
-
-
 
 # MYSQL
 

@@ -1,0 +1,19 @@
+db.tv.aggregate([
+     {
+         $group: {
+             _id: "$runtime",
+             shows: {
+                 $push: {
+                     title: "$name",
+                     language: "$language"
+                 }
+             },
+             total: {
+                 $sum: 1
+             },
+             angRating: {
+                 $avg: "$rating.average"
+             }
+         }
+     },
+ ])

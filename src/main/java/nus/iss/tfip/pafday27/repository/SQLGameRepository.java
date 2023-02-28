@@ -7,11 +7,12 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import nus.iss.tfip.pafday27.Constants;
 import nus.iss.tfip.pafday27.model.Comment;
 import nus.iss.tfip.pafday27.model.Game;
 
 @Repository
-public class SQLGameRepository implements Queries {
+public class SQLGameRepository implements Constants {
 
     @Autowired
     private JdbcTemplate template;
